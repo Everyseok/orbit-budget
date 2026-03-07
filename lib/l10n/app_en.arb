@@ -1,0 +1,107 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "ORBIT",
+  "@appTitle": {"description": "App name displayed in MaterialApp title"},
+
+  "nav_dashboard": "Mission Control",
+  "nav_subscriptions": "Subscriptions",
+  "nav_expenses": "Expenses",
+  "nav_analytics": "Analytics",
+  "nav_settings": "Settings",
+  "nav_debt": "Debt Tracker",
+
+  "placeholder_stage2": "Stage 2: live data will appear here",
+  "placeholder_stage3": "Stage 3: analytics will appear here",
+  "route_notFound": "Route not found",
+  "route_detail_stage2": "Detail view — coming in Stage 2",
+
+  "dashboard_label_totalDebt": "Total Debt",
+  "dashboard_label_monthlyBudget": "Monthly Budget",
+  "dashboard_label_todayBurn": "Today's Spend",
+  "dashboard_label_monthlySubscriptions": "Monthly Subscriptions",
+  "dashboard_label_recentTransactions": "Recent Transactions",
+  "dashboard_label_debtClearance": "Debt Clearance",
+  "dashboard_label_fuelGauge": "Budget Fuel",
+  "dashboard_action_manageDebt": "Manage Debt",
+
+  "subscription_title": "Subscription Command Center",
+  "subscription_label_active": "ACTIVE",
+  "subscription_label_paused": "PAUSED",
+  "subscription_label_cancelling": "CANCELLING",
+  "subscription_label_nextBilling": "Next billing",
+  "subscription_label_monthlyTotal": "Monthly Total",
+  "subscription_label_activeCount": "{count} active subscriptions",
+  "@subscription_label_activeCount": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "subscription_button_manage": "Manage Subscription →",
+  "subscription_button_add": "Add Subscription",
+  "subscription_action_pause": "Pause",
+  "subscription_action_delete": "Delete",
+  "subscription_action_resume": "Resume",
+  "subscription_error_urlLaunch": "Cannot open browser",
+
+  "expense_title": "Daily Log",
+  "expense_label_today": "Today",
+  "expense_label_yesterday": "Yesterday",
+  "expense_label_dailyTotal": "Day Total",
+  "expense_button_add": "Add Expense",
+  "expense_action_delete": "Delete",
+  "expense_hint_memo": "Memo (optional)",
+  "expense_label_category": "Category",
+  "expense_label_amount": "Amount (KRW)",
+
+  "category_food": "Food",
+  "category_transport": "Transport",
+  "category_living": "Living",
+  "category_telecom": "Telecom",
+  "category_health": "Health",
+  "category_other": "Other",
+
+  "debt_title": "Debt Tracker",
+  "debt_label_studentLoan": "Student Loan",
+  "debt_label_creditCard": "Credit Card",
+  "debt_label_currentBalance": "Current Balance",
+  "debt_label_startingBalance": "Starting Balance",
+  "debt_label_paidOff": "Paid off",
+  "debt_label_combinedTotal": "Total Debt",
+  "debt_button_logPayment": "Log Payment",
+  "debt_label_paymentHistory": "Payment History",
+
+  "analytics_title": "Mission Report",
+  "analytics_label_monthlyBreakdown": "Monthly Breakdown",
+  "analytics_label_spendingTrend": "30-Day Trend",
+  "analytics_label_debtProjection": "Debt Payoff Projection",
+  "analytics_label_projectionResult": "At this rate, debt cleared in {months} months ({date})",
+  "@analytics_label_projectionResult": {
+    "placeholders": {
+      "months": { "type": "int" },
+      "date": { "type": "String" }
+    }
+  },
+  "analytics_label_noProjection": "Enter payment history to see projection",
+  "analytics_label_subscriptionVsVariable": "Subscriptions vs Variable",
+
+  "settings_title": "Settings",
+  "settings_label_monthlyBudget": "Monthly Budget",
+  "settings_label_notifications": "Bill Reminders",
+  "settings_label_notificationDetail": "3 days before billing date",
+  "settings_label_dataExport": "Export Data",
+  "settings_button_exportCSV": "Export as CSV",
+  "settings_button_resetData": "Reset All Data",
+  "settings_label_appVersion": "Version",
+  "settings_label_privacyPolicy": "Privacy Policy",
+  "settings_confirm_reset": "This will permanently delete all data. Are you sure?",
+  "settings_label_language": "Language",
+
+  "common_button_save": "Save",
+  "common_button_cancel": "Cancel",
+  "common_button_confirm": "Confirm",
+  "common_button_delete": "Delete",
+  "common_label_loading": "Loading...",
+  "common_label_empty": "Nothing here yet",
+  "common_label_error": "Something went wrong",
+  "common_currency_symbol": "₩",
+  "common_label_perMonth": "/ month"
+}

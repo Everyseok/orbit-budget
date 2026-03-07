@@ -1,0 +1,85 @@
+name: orbit_budget
+description: ORBIT — Personal finance tracker. Debt payoff, subscriptions, daily expenses.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # Database
+  isar: ^3.1.0
+  isar_flutter_libs: ^3.1.0
+
+  # Fonts
+  google_fonts: ^6.2.1
+
+  # Storage
+  shared_preferences: ^2.2.3
+
+  # Platform
+  url_launcher: ^6.3.0
+  flutter_local_notifications: ^17.2.2
+  path_provider: ^2.1.3
+
+  # Stage 3 — declared now to avoid pubspec churn later
+  share_plus: ^9.0.0
+  fl_chart: ^0.68.0
+
+  # i18n
+  intl: ^0.20.0
+
+  # UI
+  flutter_slidable: ^3.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+  # Code gen
+  isar_generator: ^3.1.0
+  build_runner: ^2.4.9
+  riverpod_generator: ^2.4.0
+  # riverpod_lint and custom_lint omitted: isar_generator ^3.1.0 requires
+  # analyzer <6.0.0, which is incompatible with riverpod_lint >=2.3.12 (^6.5.0+).
+  # flutter_lints covers all essential static analysis for flutter analyze.
+
+  # Asset gen
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/icons/
+    - assets/images/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  background_color_ios: "#0A0A0F"
+  adaptive_icon_background: "#0A0A0F"
+  adaptive_icon_foreground: "assets/icons/app_icon_fg.png"
+
+flutter_native_splash:
+  color: "#0A0A0F"
+  color_dark: "#0A0A0F"
+  android: true
+  ios: true
+  fullscreen: false
