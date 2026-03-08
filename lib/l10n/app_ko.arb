@@ -91,5 +91,20 @@
   "common_label_empty": "데이터가 없습니다",
   "common_label_error": "오류가 발생했습니다",
   "common_currency_symbol": "₩",
-  "common_label_perMonth": "/ 월"
+  "common_label_perMonth": "/ 월",
+
+  "subscription_confirm_delete": "{name}을(를) 삭제하시겠습니까?",
+  "@subscription_confirm_delete": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "dashboard_label_remaining": "잔여",
+  "expense_memo_empty": "—",
+  "settings_label_version": "버전",
+  "settings_value_version": "{version}",
+  "@settings_value_version": {
+    "placeholders": { "version": { "type": "String" } }
+  },
+  "common_label_coming_soon": "준비 중",
+  "debt_label_loan": "학자금 대출",
+  "debt_label_credit": "신용카드"
 }

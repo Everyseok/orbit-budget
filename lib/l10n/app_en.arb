@@ -103,5 +103,20 @@
   "common_label_empty": "Nothing here yet",
   "common_label_error": "Something went wrong",
   "common_currency_symbol": "₩",
-  "common_label_perMonth": "/ month"
+  "common_label_perMonth": "/ month",
+
+  "subscription_confirm_delete": "Delete {name}?",
+  "@subscription_confirm_delete": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "dashboard_label_remaining": "Remaining",
+  "expense_memo_empty": "—",
+  "settings_label_version": "Version",
+  "settings_value_version": "{version}",
+  "@settings_value_version": {
+    "placeholders": { "version": { "type": "String" } }
+  },
+  "common_label_coming_soon": "Soon",
+  "debt_label_loan": "Student Loan",
+  "debt_label_credit": "Credit Card"
 }
