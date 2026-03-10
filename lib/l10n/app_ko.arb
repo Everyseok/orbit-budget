@@ -106,5 +106,63 @@
   },
   "common_label_coming_soon": "준비 중",
   "debt_label_loan": "학자금 대출",
-  "debt_label_credit": "신용카드"
+  "debt_label_credit": "신용카드",
+
+  "analytics_label_categoryBreakdown": "카테고리별 지출",
+  "analytics_label_dailyTrend": "30일 추세",
+  "analytics_label_monthlyComparison": "월별 비교",
+  "analytics_label_subVsVariable": "구독 vs 변동 지출",
+  "analytics_label_subscriptions": "구독",
+  "analytics_label_variable": "변동",
+  "analytics_label_projectedMonths": "{months}개월 남음",
+  "@analytics_label_projectedMonths": {
+    "placeholders": { "months": { "type": "int" } }
+  },
+  "analytics_label_projectedDate": "{date}에 완납 예정",
+  "@analytics_label_projectedDate": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "analytics_label_noData": "데이터가 없습니다.\n지출을 기록하면 미션 리포트가 표시됩니다.",
+  "analytics_label_insufficientData": "비교를 위해 최소 2개월 데이터가 필요합니다.",
+  "analytics_label_costRanking": "구독 비용 랭킹",
+  "analytics_action_savePreset": "프리셋 저장",
+  "analytics_action_loadPreset": "프리셋 불러오기",
+  "analytics_action_deletePreset": "프리셋 삭제",
+  "analytics_label_presetName": "프리셋 이름",
+  "analytics_hint_presetName": "예: 월간 개요",
+  "analytics_confirm_deletePreset": "프리셋 \"{name}\"을(를) 삭제하시겠습니까?",
+  "@analytics_confirm_deletePreset": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "analytics_label_noPresets": "저장된 프리셋이 없습니다.",
+  "analytics_label_sampleDataButton": "샘플 데이터 불러오기",
+
+  "export_action_exportCsv": "CSV로 내보내기",
+  "export_label_expenses": "지출",
+  "export_label_subscriptions": "구독",
+  "export_success": "CSV 공유 준비 완료",
+  "export_error": "내보내기 실패. 다시 시도해주세요.",
+
+  "notification_billing_title": "{name} 3일 후 갱신",
+  "@notification_billing_title": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notification_billing_body": "{date}에 ₩{amount} 결제 예정",
+  "@notification_billing_body": {
+    "placeholders": {
+      "amount": { "type": "String" },
+      "date":   { "type": "String" }
+    }
+  },
+
+  "settings_label_notifications": "결제 알림",
+  "settings_label_notifications_subtitle": "갱신 3일 전 알림",
+  "settings_label_exportData": "데이터 내보내기",
+  "settings_label_exportData_subtitle": "지출·구독 내역을 CSV로 다운로드",
+  "settings_label_resetData": "모든 데이터 초기화",
+  "settings_label_resetData_subtitle": "지출, 구독, 결제 내역 전체 삭제",
+  "settings_confirm_resetData": "모든 데이터가 영구적으로 삭제됩니다.\n이 작업은 취소할 수 없습니다.",
+  "settings_confirm_resetData_button": "전부 삭제",
+  "settings_label_privacyPolicy": "개인정보 처리방침",
+  "settings_label_privacyPolicy_body": "ORBIT은 모든 데이터를 기기에 로컬로 저장합니다.\n어떤 서버에도 데이터를 전송하지 않습니다."
 }

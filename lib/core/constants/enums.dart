@@ -72,3 +72,24 @@ enum DebtAccountType { loan, credit }
 
 // Stage 3 reserved
 enum ExportFormat { csv }
+
+// ────────────────────────────────────────────
+// ChartType
+// ────────────────────────────────────────────
+enum ChartType {
+  categoryPie,
+  dailyLine,
+  monthlyBar,
+  subVsVariable,
+  costRanking,
+}
+
+// ────────────────────────────────────────────
+// DateRangeFilter
+// ────────────────────────────────────────────
+enum DateRangeFilter {
+  last30Days,
+  thisMonth,
+  last3Months,
+  last6Months,
+}
