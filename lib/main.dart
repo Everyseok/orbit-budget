@@ -6,6 +6,8 @@ import 'package:orbit_budget/app/app.dart';
 import 'package:orbit_budget/core/database/isar_service.dart';
 import 'package:orbit_budget/core/services/preferences_service.dart';
 import 'package:orbit_budget/core/theme/app_colors.dart';
+import 'package:orbit_budget/features/debt/repositories/isar_debt_repository.dart';
+import 'package:orbit_budget/features/subscriptions/repositories/isar_subscription_repository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
@@ -33,6 +35,8 @@ Future<void> main() async {
 
   final isarService = IsarService();
   await isarService.init();
+  await IsarSubscriptionRepository(isarService).seed();
+  await IsarDebtRepository(isarService).seed();
 
   runApp(
     ProviderScope(
