@@ -118,5 +118,63 @@
   },
   "common_label_coming_soon": "Soon",
   "debt_label_loan": "Student Loan",
-  "debt_label_credit": "Credit Card"
+  "debt_label_credit": "Credit Card",
+
+  "analytics_label_categoryBreakdown": "Spending by Category",
+  "analytics_label_dailyTrend": "30-Day Trend",
+  "analytics_label_monthlyComparison": "Monthly Comparison",
+  "analytics_label_subVsVariable": "Subscriptions vs Variable",
+  "analytics_label_subscriptions": "Subscriptions",
+  "analytics_label_variable": "Variable",
+  "analytics_label_projectedMonths": "{months} months remaining",
+  "@analytics_label_projectedMonths": {
+    "placeholders": { "months": { "type": "int" } }
+  },
+  "analytics_label_projectedDate": "Clear by {date}",
+  "@analytics_label_projectedDate": {
+    "placeholders": { "date": { "type": "String" } }
+  },
+  "analytics_label_noData": "No data yet.\nStart logging expenses to see your mission report.",
+  "analytics_label_insufficientData": "Need at least 2 months of data.",
+  "analytics_label_costRanking": "Subscription Cost Ranking",
+  "analytics_action_savePreset": "Save Preset",
+  "analytics_action_loadPreset": "Load Preset",
+  "analytics_action_deletePreset": "Delete Preset",
+  "analytics_label_presetName": "Preset Name",
+  "analytics_hint_presetName": "e.g. Monthly Overview",
+  "analytics_confirm_deletePreset": "Delete preset \"{name}\"?",
+  "@analytics_confirm_deletePreset": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "analytics_label_noPresets": "No saved presets.",
+  "analytics_label_sampleDataButton": "Load Sample Data",
+
+  "export_action_exportCsv": "Export as CSV",
+  "export_label_expenses": "Expenses",
+  "export_label_subscriptions": "Subscriptions",
+  "export_success": "CSV ready to share.",
+  "export_error": "Export failed. Please try again.",
+
+  "notification_billing_title": "{name} renews in 3 days",
+  "@notification_billing_title": {
+    "placeholders": { "name": { "type": "String" } }
+  },
+  "notification_billing_body": "₩{amount} on {date}",
+  "@notification_billing_body": {
+    "placeholders": {
+      "amount": { "type": "String" },
+      "date":   { "type": "String" }
+    }
+  },
+
+  "settings_label_notifications": "Billing Reminders",
+  "settings_label_notifications_subtitle": "3 days before renewal",
+  "settings_label_exportData": "Export Data",
+  "settings_label_exportData_subtitle": "Download expenses and subscriptions as CSV",
+  "settings_label_resetData": "Reset All Data",
+  "settings_label_resetData_subtitle": "Delete all expenses, subscriptions, and payments",
+  "settings_confirm_resetData": "This will permanently delete all your data.\nThis action cannot be undone.",
+  "settings_confirm_resetData_button": "Delete Everything",
+  "settings_label_privacyPolicy": "Privacy Policy",
+  "settings_label_privacyPolicy_body": "ORBIT stores all data locally on your device.\nNo data is sent to any server."
 }

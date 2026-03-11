@@ -3,6 +3,7 @@ import 'package:isar/isar.dart';
 import 'package:orbit_budget/core/database/models/budget_setting.dart';
 import 'package:orbit_budget/core/database/models/debt_account.dart';
 import 'package:orbit_budget/core/database/models/expense_entry.dart';
+import 'package:orbit_budget/core/database/models/graph_preset.dart';
 import 'package:orbit_budget/core/database/models/payment_log.dart';
 import 'package:orbit_budget/core/database/models/subscription_item.dart';
 import 'package:path_provider/path_provider.dart';
@@ -19,6 +20,7 @@ class IsarService {
         DebtAccountSchema,
         PaymentLogSchema,
         BudgetSettingSchema,
+        GraphPresetSchema,
       ],
       directory: dir.path,
       name: 'orbit_db',

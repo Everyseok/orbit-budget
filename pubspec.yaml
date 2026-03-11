@@ -33,6 +33,7 @@ dependencies:
   url_launcher: ^6.3.0
   flutter_local_notifications: ^17.2.2
   path_provider: ^2.1.3
+  package_info_plus: ^8.0.0
 
   # Stage 3 — declared now to avoid pubspec churn later
   share_plus: ^9.0.0
