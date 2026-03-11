@@ -4,6 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:orbit_budget/app/app.dart';
 import 'package:orbit_budget/core/database/isar_service.dart';
+import 'package:orbit_budget/core/services/flutter_local_notification_service.dart';
+import 'package:orbit_budget/core/services/notification_service.dart';
 import 'package:orbit_budget/core/services/preferences_service.dart';
 import 'package:orbit_budget/core/theme/app_colors.dart';
 import 'package:orbit_budget/features/debt/repositories/isar_debt_repository.dart';
@@ -38,11 +40,15 @@ Future<void> main() async {
   await IsarSubscriptionRepository(isarService).seed();
   await IsarDebtRepository(isarService).seed();
 
+  final notifService = FlutterLocalNotificationService();
+  await notifService.init();
+
   runApp(
     ProviderScope(
       overrides: [
         isarServiceProvider.overrideWithValue(isarService),
         preferencesServiceProvider.overrideWithValue(prefsService),
+        notificationServiceProvider.overrideWithValue(notifService),
       ],
       observers: kDebugMode ? [_ProviderLogger()] : [],
       child: const OrbitApp(),

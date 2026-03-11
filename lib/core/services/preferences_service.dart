@@ -8,6 +8,8 @@ class PreferencesService {
 
   static const _keyOnboardingDone = 'onboarding_done';
   static const _keyNotificationsEnabled = 'notifications_enabled';
+  static const _keyNotificationPermissionRequested =
+      'notification_permission_requested';
   static const _keyLocale = 'locale';
 
   bool get onboardingDone => _prefs.getBool(_keyOnboardingDone) ?? false;
@@ -18,6 +20,11 @@ class PreferencesService {
       _prefs.getBool(_keyNotificationsEnabled) ?? false;
   Future<void> setNotificationsEnabled(bool v) =>
       _prefs.setBool(_keyNotificationsEnabled, v);
+
+  bool get notificationPermissionRequested =>
+      _prefs.getBool(_keyNotificationPermissionRequested) ?? false;
+  Future<void> setNotificationPermissionRequested(bool v) =>
+      _prefs.setBool(_keyNotificationPermissionRequested, v);
 
   String get locale =>
       _prefs.getString(_keyLocale) ?? AppConstants.defaultLocale;

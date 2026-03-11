@@ -7,11 +7,14 @@ import 'package:orbit_budget/core/theme/app_colors.dart';
 import 'package:orbit_budget/core/theme/app_typography.dart';
 import 'package:orbit_budget/core/utils/krw_input_formatter.dart';
 import 'package:orbit_budget/features/settings/providers/settings_providers.dart';
+import 'package:orbit_budget/features/settings/widgets/export_sheet.dart';
+import 'package:orbit_budget/features/settings/widgets/reset_data_tile.dart';
 import 'package:orbit_budget/shared/models/budget_setting_model.dart';
 import 'package:orbit_budget/shared/widgets/orbit_bottom_sheet.dart';
 import 'package:orbit_budget/shared/widgets/orbit_button.dart';
 import 'package:orbit_budget/shared/widgets/orbit_text_field.dart';
 import 'package:orbit_budget/src/l10n/app_localizations.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -21,6 +24,7 @@ class SettingsScreen extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final budgetAsync = ref.watch(budgetSettingProvider);
     final currentLocale = ref.watch(localeProvider);
+    final notifEnabled = ref.watch(notificationsEnabledProvider);
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.settings_title)),
@@ -38,8 +42,8 @@ class SettingsScreen extends ConsumerWidget {
             trailing: const Icon(Icons.chevron_right,
                 color: AppColors.mutedGray),
             onTap: () {
-              final current = budgetAsync.value ??
-                  BudgetSettingModel.defaults();
+              final current =
+                  budgetAsync.value ?? BudgetSettingModel.defaults();
               OrbitBottomSheet.show(
                 context: context,
                 title: l10n.settings_label_monthlyBudget,
@@ -61,43 +65,68 @@ class SettingsScreen extends ConsumerWidget {
             onTap: () => _showLanguageDialog(context, ref, l10n),
           ),
           const Divider(),
-          // App version (read-only)
-          ListTile(
-            title: Text(l10n.settings_label_version,
-                style: AppTypography.bodyMedium()),
-            trailing: Text(l10n.settings_value_version('1.0.0+1'),
-                style: AppTypography.labelSmall()),
+          // App version (package_info_plus)
+          FutureBuilder<PackageInfo>(
+            future: PackageInfo.fromPlatform(),
+            builder: (ctx, snap) => ListTile(
+              title: Text(l10n.settings_label_version,
+                  style: AppTypography.bodyMedium()),
+              trailing: Text(
+                snap.hasData
+                    ? l10n.settings_value_version(
+                        '${snap.data!.version}+${snap.data!.buildNumber}')
+                    : '…',
+                style: AppTypography.labelSmall(),
+              ),
+            ),
           ),
           const Divider(),
-          // Stage 3 items — disabled
-          ListTile(
-            enabled: false,
+          // Billing Reminders toggle
+          SwitchListTile(
             title: Text(l10n.settings_label_notifications,
                 style: AppTypography.bodyMedium()),
-            trailing: Text(l10n.common_label_coming_soon,
+            subtitle: Text(l10n.settings_label_notifications_subtitle,
                 style: AppTypography.labelSmall()),
+            value: notifEnabled,
+            activeThumbColor: AppColors.electricBlue,
+            onChanged: (val) async {
+              ref.read(notificationsEnabledProvider.notifier).state = val;
+              await ref
+                  .read(preferencesServiceProvider)
+                  .setNotificationsEnabled(val);
+            },
           ),
+          const Divider(),
+          // Export Data
           ListTile(
-            enabled: false,
-            title: Text(l10n.settings_button_exportCSV,
+            title: Text(l10n.settings_label_exportData,
                 style: AppTypography.bodyMedium()),
-            trailing: Text(l10n.common_label_coming_soon,
+            subtitle: Text(l10n.settings_label_exportData_subtitle,
                 style: AppTypography.labelSmall()),
+            trailing: const Icon(Icons.download_outlined,
+                color: AppColors.mutedGray),
+            onTap: () => OrbitBottomSheet.show(
+              context: context,
+              title: l10n.settings_label_exportData,
+              child: const ExportSheet(),
+            ),
           ),
+          const Divider(),
+          // Privacy Policy
           ListTile(
-            enabled: false,
-            title: Text(l10n.settings_button_resetData,
-                style: AppTypography.bodyMedium()),
-            trailing: Text(l10n.common_label_coming_soon,
-                style: AppTypography.labelSmall()),
-          ),
-          ListTile(
-            enabled: false,
             title: Text(l10n.settings_label_privacyPolicy,
                 style: AppTypography.bodyMedium()),
-            trailing: Text(l10n.common_label_coming_soon,
-                style: AppTypography.labelSmall()),
+            trailing: const Icon(Icons.chevron_right,
+                color: AppColors.mutedGray),
+            onTap: () => OrbitBottomSheet.show(
+              context: context,
+              title: l10n.settings_label_privacyPolicy,
+              child: _PrivacyPolicyBody(l10n: l10n),
+            ),
           ),
+          const Divider(),
+          // Reset All Data
+          const ResetDataTile(),
         ],
       ),
     );
@@ -143,6 +172,19 @@ class SettingsScreen extends ConsumerWidget {
       ),
     );
   }
+}
+
+class _PrivacyPolicyBody extends StatelessWidget {
+  final AppLocalizations l10n;
+  const _PrivacyPolicyBody({required this.l10n});
+
+  @override
+  Widget build(BuildContext context) => SingleChildScrollView(
+        child: Text(
+          l10n.settings_label_privacyPolicy_body,
+          style: AppTypography.bodyMedium(),
+        ),
+      );
 }
 
 class _BudgetEditSheet extends ConsumerStatefulWidget {
